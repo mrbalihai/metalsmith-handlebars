@@ -1,0 +1,17 @@
+{
+  "name": "metalsmith-handlebars",
+  "version": "1.0.0",
+  "description": "A basic handlebars implimentation for metalsmith",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Robert Bollons <rob@robbollons.com>",
+  "license": "MIT",
+  "repository": "git://github.com/RobBollons/metalsmith-handlebars.git",
+  "dependencies": {
+    "handlebars": "^4.0.6",
+    "minimatch": "^3.0.3"
+  }
+}
