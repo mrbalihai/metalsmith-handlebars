@@ -34,6 +34,7 @@ const Metalsmith = require('metalsmith'),
 
 Metalsmith(__dirname)
     .use(handlebars({
+        pattern: '**/*.hbs', // defaults to '**'
         partials: 'partials', // defaults to 'partials' in the root
         targetExtension: 'html' // defaults to html
     }))
