@@ -5,7 +5,8 @@ const Handlebars = require('handlebars'),
 
 const main = (options = {}) =>
     (files, metalsmith, done) => {
-        const pattern = options.pattern || '**',
+        const globals = options.globals || {},
+              pattern = options.pattern || '**',
               targetExtension = options.targetExtension || 'html',
               partialsFolder = path.join(metalsmith._directory,
                                          options.partials || 'partials');
@@ -16,7 +17,7 @@ const main = (options = {}) =>
             .filter(file => match(file, pattern))
             .forEach(file => {
                 const template = Handlebars.compile(files[file].contents.toString()),
-                      data = files[file],
+                      data = Object.assign( {}, globals, files[file] ),
                       filePath = path.parse(file),
                       newPath = `${filePath.dir}${filePath.dir ? '/' : '' }${filePath.name}.${targetExtension}`;
 
