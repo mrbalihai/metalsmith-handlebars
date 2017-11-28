@@ -36,7 +36,7 @@ Metalsmith(__dirname)
     .use(handlebars({
         pattern: '**/*.hbs', // defaults to '**'
         partials: 'partials', // defaults to 'partials' in the root
-        targetExtension: 'html' // defaults to html,
+        targetExtension: 'html', // defaults to html
         globals: { // defaults to an empty object
             foo: 'bar'
         }

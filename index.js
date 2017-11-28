@@ -17,7 +17,7 @@ const main = (options = {}) =>
             .filter(file => match(file, pattern))
             .forEach(file => {
                 const template = Handlebars.compile(files[file].contents.toString()),
-                      data = Object.assign( {}, globals, files[file] ),
+                      data = Object.assign({}, globals, files[file]),
                       filePath = path.parse(file),
                       newPath = `${filePath.dir}${filePath.dir ? '/' : '' }${filePath.name}.${targetExtension}`;
 
