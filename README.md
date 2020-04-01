@@ -39,7 +39,9 @@ Metalsmith(__dirname)
         targetExtension: 'html', // defaults to html
         globals: { // defaults to an empty object
             foo: 'bar'
-        }
+        },
+        // You can also pass a custom handlebars instance (e.g. when you register custom helpers).
+        handlebars: MyHandlebars, // defaults to require('handlebars')
     }))
     .build(function(err) {
         if (err) throw err;
