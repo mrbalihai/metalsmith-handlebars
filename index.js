@@ -1,7 +1,8 @@
-const Handlebars = require('handlebars'),
-      match = require('minimatch'),
+const match = require('minimatch'),
       fs = require('fs'),
       path = require('path');
+
+let Handlebars;
 
 const main = (options = {}) =>
     (files, metalsmith, done) => {
@@ -10,6 +11,8 @@ const main = (options = {}) =>
               targetExtension = options.targetExtension || 'html',
               partialsFolder = path.join(metalsmith._directory,
                                          options.partials || 'partials');
+
+        Handlebars = options.handlebars || require('handlebars');
 
         setImmediate(done);
         registerPartials(partialsFolder);
